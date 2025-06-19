@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #0d0d0d 60%, #1e3c72 100%);
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBody 1s;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.10);
+  padding: 48px 56px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  border: 1.5px solid rgba(0,255,255,0.15);
+  width: 92%;
+  max-width: 520px;
+  text-align: center;
+  backdrop-filter: blur(14px);
+  transition: box-shadow 0.3s;
+  animation: popIn 0.7s;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  margin-bottom: 32px;
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(45deg, #00ffff, #00ff88);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0,255,255,0.15);
+}
+
+form label {
+  display: block;
+  margin: 18px 0 7px;
+  font-weight: bold;
+  color: #00ffff;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px rgba(0,255,255,0.10);
+}
+
+select, button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  font-size: 1.08rem;
+  outline: none;
+  box-shadow: 0 1.5px 6px rgba(0,255,255,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+select:focus, button:focus {
+  box-shadow: 0 0 0 2px #00ffff55;
+  transform: scale(1.03);
+}
+
+select {
+  background-color: #e6faff;
+  color: #222;
+  font-weight: 500;
+}
+
+button {
+  background: linear-gradient(135deg, #00ff88, #00ffff);
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,255,255,0.10);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00ffff, #00ff88);
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,255,255,0.18);
+}
+
+#result {
+  margin-top: 24px;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #00ff88;
+  text-shadow: 0 1.5px 6px rgba(0,255,255,0.10);
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Match Summary Card Styles */
+.summary-card {
+  margin-top: 32px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 4px 16px rgba(0,255,255,0.12);
+  text-align: center;
+  animation: fadeInBody 0.5s ease-in-out;
+}
+
+.summary-card .teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.team-logo {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: white;
+  object-fit: contain;
+}
+
+.vs {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .container {
+    padding: 24px 8px;
+    border-radius: 14px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  select, button {
+    font-size: 0.98rem;
+    padding: 10px;
+  }
+
+  .team-logo {
+    height: 48px;
+    width: 48px;
+  }
+
+  .vs {
+    font-size: 1.2rem;
+  }
+}

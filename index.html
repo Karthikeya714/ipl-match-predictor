@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Match Winner Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🏏 IPL Match Predictor</h1>
+    <form id="predict-form">
+      <label for="team1">Team 1:</label>
+      <select id="team1" required>
+        <option>Chennai Super Kings</option>
+        <option>Mumbai Indians</option>
+        <option>Royal Challengers Bangalore</option>
+        <option>Kolkata Knight Riders</option>
+        <option>Delhi Capitals</option>
+        <option>Sunrisers Hyderabad</option>
+        <option>Rajasthan Royals</option>
+        <option>Kings XI Punjab</option>
+        <option>Gujarat Titans</option>
+        <option>Lucknow Super Giants</option>
+      </select>
+
+      <label for="team2">Team 2:</label>
+      <select id="team2" required>
+        <option>Chennai Super Kings</option>
+        <option>Mumbai Indians</option>
+        <option>Royal Challengers Bangalore</option>
+        <option>Kolkata Knight Riders</option>
+        <option>Delhi Capitals</option>
+        <option>Sunrisers Hyderabad</option>
+        <option>Rajasthan Royals</option>
+        <option>Kings XI Punjab</option>
+        <option>Gujarat Titans</option>
+        <option>Lucknow Super Giants</option>
+      </select>
+
+      <label for="venue">Venue:</label>
+      <select id="venue" required>
+        <option>MA Chidambaram Stadium, Chepauk, Chennai</option>
+        <option>Wankhede Stadium, Mumbai</option>
+        <option>Dubai International Cricket Stadium</option>
+        <option>Sharjah Cricket Stadium</option>
+        <option>Narendra Modi Stadium, Ahmedabad</option>
+        <option>Arun Jaitley Stadium, Delhi</option>
+        <option>Eden Gardens, Kolkata</option>
+        <option>M Chinnaswamy Stadium, Bengaluru</option>
+        <option>Rajiv Gandhi International Stadium, Uppal, Hyderabad</option>
+        <option>Sawai Mansingh Stadium, Jaipur</option>
+        <option>Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh</option>
+        <option>Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow</option>
+      </select>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <div id="summary-card" class="summary-card hidden">
+      <div class="teams">
+        <div class="team" id="team1-summary">
+          <img id="team1-logo" class="team-logo" />
+          <span id="team1-name"></span>
+        </div>
+        <span class="vs">VS</span>
+        <div class="team" id="team2-summary">
+          <img id="team2-logo" class="team-logo" />
+          <span id="team2-name"></span>
+        </div>
+      </div>
+      <p id="match-type"></p>
+      <p id="venue-summary"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
