@@ -2,12 +2,17 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import joblib
 import pandas as pd
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 # Load trained model and columns
 model, model_columns = joblib.load("winner_predictor.pkl")
+
+@app.route("/")
+def home():
+    return "Welcome to the IPL Match Predictor API! Use the /predict endpoint."
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -46,4 +51,5 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
